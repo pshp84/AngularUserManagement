@@ -1,0 +1,19 @@
+.margincontent {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.scroll {
+    overflow-y: auto;
+    text-align: justify;
+}
+.scroll::-webkit-scrollbar {
+    width: 7px;
+}
+.scroll::-webkit-scrollbar-track {
+    -webkit-box-shadow: #007bff;
+    border-radius: 5px;
+}
+.scroll::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-box-shadow: #007bff;
+}

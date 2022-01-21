@@ -1,0 +1,55 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1>User Detail</h1>
+      </div>
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="#">User</a></li>
+          <li class="breadcrumb-item active">User Detail</li>
+        </ol>
+      </div>
+    </div>
+  </div><!-- /.container-fluid -->
+</section>
+<section class="content">
+  <div class="container-fluid">
+    <div *ngIf="showDetail">
+      <div class="col-12">
+        <div class="card card-primary card-outline">
+          <div class="card-body box-profile">
+            <div class="text-center">
+              <img class="profile-user-img img-fluid img-circle" [src]="userDetail.avatar" alt="User profile picture">
+            </div>
+            <p>&nbsp;</p>
+            <div class="card card-primary">
+              <div class="card-body">
+                <strong>First Name</strong>
+                <p class="text-muted">
+                  {{userDetail.first_name}}
+                </p>
+                <hr>
+                <strong>Last Name</strong>
+                <p class="text-muted"> {{userDetail.last_name}}</p>
+                <hr>
+                <strong>Email</strong>
+                <p class="text-muted"> {{userDetail.email}}</p>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <div class="col-2">
+              <a href="javascript:void();" (click)="goToHome()" class="btn btn-primary btn-block"><b>Back</b></a>
+            </div>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</section>

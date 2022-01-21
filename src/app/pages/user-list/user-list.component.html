@@ -1,0 +1,42 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1>User List</h1>
+      </div>
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="javascript:void()">User</a></li>
+          <li class="breadcrumb-item active">User List</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <div class="container-fluid">
+    <div class="scroll" [ngStyle]="{'height': getWindowHeight() + 'px'}">
+      <div class="row margincontent" infinite-scroll [infiniteScrollDistance]="scrollDistance"
+        [infiniteScrollUpDistance]="scrollUpDistance" [infiniteScrollContainer]="'.scroll'"
+        [infiniteScrollThrottle]="throttle" [fromRoot]="true" (scrolled)="onScrollDown()">
+        <div class="col-md-4" *ngFor="let item of UserList">
+          <div class="card card-widget widget-user">
+            <div class="widget-user-header bg-info">
+              <a href="javascript:void()"  (click)="getUserDetail(item.id)"><h3 class="widget-user-username">{{item.first_name}} {{item.last_name}}</h3></a>
+              <h5 class="widget-user-desc">{{item.email}}</h5>
+            </div>
+            <div class="widget-user-image">
+              <img class="img-circle elevation-2" [src]="item.avatar" alt="User Avatar">
+            </div>
+            <div class="card-footer">
+              <div class="row">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
